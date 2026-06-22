@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Coach / MyPAL 每月任務</title>
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --card: #ffffff;
+    --ink: #2b2b2b;
+    --muted: #8a8275;
+    --line: #e6e0d4;
+    --sc: #c2410c;        /* Sales Coach 主色：磚橘 */
+    --mypal: #5b3a8e;     /* MyPAL 主色：紫 */
+    --check: #0f766e;     /* 查核：青綠 */
+    --open: #15803d;
+    --closed: #9ca3af;
+    --shadow: 0 6px 20px rgba(80,60,30,.08);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC",
+                 "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    padding: 28px 18px 48px;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; }
+
+  header { text-align: center; margin-bottom: 26px; }
+  header h1 {
+    font-size: 22px; font-weight: 800; margin: 0 0 6px;
+    letter-spacing: .5px;
+  }
+  header p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  .section-label {
+    font-size: 12px; font-weight: 700; color: var(--muted);
+    letter-spacing: 2px; margin: 22px 4px 10px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 18px 20px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+  .card-top {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .task-name { font-size: 17px; font-weight: 700; }
+  .badge {
+    font-size: 12px; font-weight: 700; padding: 4px 10px;
+    border-radius: 999px; color: #fff; white-space: nowrap;
+  }
+  .badge.open { background: var(--open); }
+  .badge.closed { background: var(--closed); }
+  .deadline { font-size: 13px; color: var(--muted); margin: -6px 0 14px; }
+
+  .btn {
+    display: block; width: 100%; text-align: center;
+    padding: 15px; border-radius: 12px; text-decoration: none;
+    font-size: 16px; font-weight: 700; color: #fff;
+    transition: transform .05s ease, opacity .2s ease;
+  }
+  .btn:active { transform: scale(.98); }
+  .btn.sc { background: var(--sc); }
+  .btn.mypal { background: var(--mypal); }
+  .btn.check { background: var(--check); }
+  .btn.disabled {
+    background: #d8d2c6; color: #8f897c; pointer-events: none;
+  }
+
+  .check-card { text-align: center; }
+  .check-card p { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+
+  footer {
+    text-align: center; margin-top: 28px;
+    font-size: 12px; color: var(--muted); line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Sales Coach / MyPAL 每月任務</h1>
+    <p>完成任務後上傳截圖，並可隨時查核完成狀況</p>
+  </header>
+
+  <div class="section-label">上傳任務</div>
+
+  <!-- ===== Sales Coach ===== -->
+  <div class="card">
+    <div class="card-top">
+      <span class="task-name">📤 Sales Coach</span>
+      <!-- 每月更新：開放 → class="badge open"／未開放 → class="badge closed" -->
+      <span class="badge open">本月開放</span>
+    </div>
+    <!-- 每月更新：截止日 -->
+    <div class="deadline">本月開放至 6/26（五）前完成</div>
+    <!-- 每月更新：換成當月 Sales Coach 表單連結 -->
+    <a class="btn sc" href="https://forms.gle/aXbdXYcZ1HumbooR9">上傳 Sales Coach 截圖</a>
+  </div>
+
+  <!-- ===== MyPAL ===== -->
+  <div class="card">
+    <div class="card-top">
+      <span class="task-name">📤 MyPAL</span>
+      <!-- 每月更新：開放 → class="badge open"／未開放 → class="badge closed" -->
+      <span class="badge open">本月開放</span>
+    </div>
+    <!-- 每月更新：截止日 -->
+    <div class="deadline">本月開放至 7/2（四）前完成</div>
+    <!-- 每月更新：換成當月 MyPAL 表單連結；未開放時改 class="btn mypal disabled" -->
+    <a class="btn mypal" href="https://forms.gle/xUaXdzs3CnLbmChv7">上傳 MyPAL 截圖</a>
+  </div>
+
+  <div class="section-label">查核</div>
+
+  <!-- ===== 查核 ===== -->
+  <div class="card check-card">
+    <p>查看自己 / 門市 / 區域目前的完成狀況</p>
+    <!-- 查核試算表連結（一般不用每月換） -->
+    <a class="btn check" href="https://docs.google.com/spreadsheets/d/1F4lS3Cl82tzaRsrclTuGwtqBacW7dW_YpDRt5f9jA0o/edit?usp=sharing" target="_blank" rel="noopener">🔍 查核完成狀況</a>
+  </div>
+
+  <footer>
+    STUDIO A 教學培訓部<br>
+    這個連結每月固定，請加入書籤方便下次使用
+  </footer>
+
+</div>
+</body>
+</html>
